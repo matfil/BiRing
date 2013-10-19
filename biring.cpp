@@ -32,7 +32,8 @@ public:
 	private:
 		Node *ptr;
 	public:
-		iterator(Node *n=nullptr) : ptr(n) {}
+		iterator() : ptr(nullptr) {}
+		iterator(Node *n) : ptr(n) {}
 		iterator& operator++()
 			{
 				DBG("inkrementuje " << ptr << " ktory zawieral wartosc " << ptr->val << " do " << ptr->next << endl);
@@ -128,7 +129,8 @@ for(it=test.begin(); it != test.end();)
 		cout << *it << endl;
 		++it;
 	}*/
-BiRing<int>::iterator it(test.end());
+BiRing<int>::iterator it;
+it = test.end();
 
 while(true)
 	{
@@ -148,7 +150,14 @@ while(true)
 			case '-':
 			{
 				cout << "usuwam element o wartosci " << *it << "\n";
-				it=test.remove(it);
+				try
+				{
+					it=test.remove(it);
+				}
+				catch(char const* exc)
+				{
+					cout << "jeszcze raz przemyśl swoje działania\nnie można usuwać końca kontenera\n";
+				}
 				break;
 			}
 			case '>':
