@@ -87,10 +87,10 @@ public:
 		head.next = head.prev = &head;
 	}
 
-	void insert(T value, iterator where)
+	iterator insert(T value, iterator where)
 	{
-		where.ptr->next = where.ptr->next->prev = new Node(value, where.ptr->next, where.ptr);
 		++nElem;
+		return iterator(where.ptr->next = where.ptr->next->prev = new Node(value, where.ptr->next, where.ptr));
 	}
 	void push_back(T value)
 	{
