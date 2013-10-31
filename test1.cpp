@@ -1,5 +1,5 @@
 #include <iostream>
-#include "BIRING.cpp"
+#include "biring.h"
 
 const int STOP = 1<<31;
 

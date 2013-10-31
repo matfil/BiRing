@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include "BIRING.cpp"
+#include "biring.h"
 
 const int SIZE = 50, MAXS = 10000;
 
@@ -29,10 +29,10 @@ for(it = test.begin(); it != test.end(); ++it)
 	if(!(q%5)) cout << endl;
 	else cout << " ";
 	}
-cout << "size: " << test.size() << endl;
+cout << "size: " << test.Size() << endl;
 for(int i=0; i < SIZE/5; ++i)
 	{
-	int to_del = rand() % test.size();
+	int to_del = rand() % test.Size();
 	it = test.begin();
 	for(int j=0; j<to_del; ++j)
 		++it;
@@ -47,6 +47,6 @@ for(it = test.begin(); it != test.end(); ++it)
 	if(!(q%5)) cout << endl;
 	else cout << " ";
 	}
-cout << "size: " << test.size() << endl;
+cout << "size: " << test.Size() << endl;
 return 0;
 }
